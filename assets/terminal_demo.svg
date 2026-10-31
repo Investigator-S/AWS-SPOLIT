@@ -1,0 +1,193 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" width="100%" height="100%">
+  <defs>
+    <style>
+      @keyframes cursorBlink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+      
+      @keyframes step1 { 0% { opacity: 0; } 4% { opacity: 1; } 95% { opacity: 1; } 100% { opacity: 0; } }
+      @keyframes step2 { 0%, 5% { opacity: 0; } 9% { opacity: 1; } 95% { opacity: 1; } 100% { opacity: 0; } }
+      @keyframes step3 { 0%, 12% { opacity: 0; } 16% { opacity: 1; } 95% { opacity: 1; } 100% { opacity: 0; } }
+      @keyframes step4 { 0%, 20% { opacity: 0; } 25% { opacity: 1; } 95% { opacity: 1; } 100% { opacity: 0; } }
+      @keyframes step5 { 0%, 30% { opacity: 0; } 35% { opacity: 1; } 95% { opacity: 1; } 100% { opacity: 0; } }
+      @keyframes step6 { 0%, 40% { opacity: 0; } 45% { opacity: 1; } 95% { opacity: 1; } 100% { opacity: 0; } }
+      @keyframes step7 { 0%, 52% { opacity: 0; } 58% { opacity: 1; } 95% { opacity: 1; } 100% { opacity: 0; } }
+      @keyframes step8 { 0%, 65% { opacity: 0; } 71% { opacity: 1; } 95% { opacity: 1; } 100% { opacity: 0; } }
+      @keyframes step9 { 0%, 78% { opacity: 0; } 83% { opacity: 1; } 95% { opacity: 1; } 100% { opacity: 0; } }
+      @keyframes step10 { 0%, 88% { opacity: 0; } 92% { opacity: 1; } 95% { opacity: 1; } 100% { opacity: 0; } }
+
+      @keyframes progressFill {
+        0%, 35% { width: 0px; }
+        45% { width: 340px; }
+        95% { width: 340px; }
+        100% { width: 0px; }
+      }
+
+      .term-bg { fill: #0d1117; stroke: #30363d; stroke-width: 1.5; rx: 10px; }
+      .title-bar { fill: #161b22; rx: 10px; }
+      .bar-line { stroke: #30363d; stroke-width: 1; }
+      .dot-red { fill: #ff5f56; }
+      .dot-yellow { fill: #ffbd2e; }
+      .dot-green { fill: #27c93f; }
+      .term-title { fill: #8b949e; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 500; text-anchor: middle; }
+
+      .mono {
+        font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+        font-size: 13.5px;
+        line-height: 22px;
+      }
+
+      .c-dim { fill: #6e7681; }
+      .c-white { fill: #f0f6fc; }
+      .c-cyan { fill: #58a6ff; }
+      .c-green { fill: #3fb950; }
+      .c-yellow { fill: #d29922; }
+      .c-red { fill: #f85149; }
+      .c-purple { fill: #bc8cff; }
+      .c-blue { fill: #79c0ff; }
+
+      .s1 { animation: step1 14s infinite; }
+      .s2 { animation: step2 14s infinite; }
+      .s3 { animation: step3 14s infinite; }
+      .s4 { animation: step4 14s infinite; }
+      .s5 { animation: step5 14s infinite; }
+      .s6 { animation: step6 14s infinite; }
+      .s7 { animation: step7 14s infinite; }
+      .s8 { animation: step8 14s infinite; }
+      .s9 { animation: step9 14s infinite; }
+      .s10 { animation: step10 14s infinite; }
+
+      .cursor {
+        animation: cursorBlink 0.9s infinite;
+        fill: #58a6ff;
+      }
+
+      .p-bar-bg { fill: #21262d; rx: 3px; }
+      .p-bar-fill {
+        fill: #238636;
+        rx: 3px;
+        animation: progressFill 14s infinite ease-out;
+      }
+    </style>
+  </defs>
+
+  <!-- Terminal Window Background -->
+  <rect x="2" y="2" width="876" height="516" class="term-bg" filter="drop-shadow(0 12px 28px rgba(0,0,0,0.45))" />
+  
+  <!-- Title Bar -->
+  <path d="M 2 12 Q 2 2 12 2 L 868 2 Q 878 2 878 12 L 878 38 L 2 38 Z" class="title-bar" />
+  <line x1="2" y1="38" x2="878" y2="38" class="bar-line" />
+
+  <!-- Window Dots -->
+  <circle cx="24" cy="20" r="6" class="dot-red" />
+  <circle cx="44" cy="20" r="6" class="dot-yellow" />
+  <circle cx="64" cy="20" r="6" class="dot-green" />
+
+  <!-- Title Text -->
+  <text x="440" y="24" class="term-title">aws-security-scanner -- python3 main.py -- target: prod-aws-account</text>
+
+  <!-- Terminal Output -->
+  <g class="mono" transform="translate(26, 70)">
+    
+    <!-- Step 1: Prompt & Command -->
+    <g class="s1">
+      <text x="0" y="0">
+        <tspan class="c-green">sec-ops@cloud-shell</tspan><tspan class="c-dim">:</tspan><tspan class="c-blue">~/aws-scanner</tspan><tspan class="c-white">$ ./AWS_Security_Scanner.exe</tspan>
+      </text>
+    </g>
+
+    <!-- Step 2: Banner and Validation -->
+    <g class="s2">
+      <text x="0" y="26">
+        <tspan class="c-purple">[INFO]</tspan><tspan class="c-white"> AWS Security Scanner v2.0 - Active Misconfiguration Engine</tspan>
+      </text>
+      <text x="0" y="48">
+        <tspan class="c-dim">[+] Validating AWS credentials via STS GetCallerIdentity...</tspan>
+      </text>
+      <text x="0" y="70">
+        <tspan class="c-green">[OK]</tspan><tspan class="c-white"> Authenticated as </tspan><tspan class="c-cyan">arn:aws:iam::123456789012:user/AuditEngine</tspan><tspan class="c-dim"> (us-east-1)</tspan>
+      </text>
+    </g>
+
+    <!-- Step 3: Discovery Checks -->
+    <g class="s3">
+      <text x="0" y="100">
+        <tspan class="c-dim">[-] Service Pre-flight Discovery:</tspan>
+      </text>
+      <text x="20" y="122">
+        <tspan class="c-white">EC2 Instances      :</tspan> <tspan class="c-green">[CONFIGURED &amp; IN USE - 14/14 RUNNING]</tspan>
+      </text>
+      <text x="20" y="144">
+        <tspan class="c-white">S3 Buckets         :</tspan> <tspan class="c-green">[CONFIGURED &amp; IN USE - 28 BUCKETS]</tspan>
+      </text>
+      <text x="20" y="166">
+        <tspan class="c-white">IAM Accounts       :</tspan> <tspan class="c-green">[CONFIGURED &amp; IN USE - 42 USERS / 18 ROLES]</tspan>
+      </text>
+      <text x="20" y="188">
+        <tspan class="c-white">Security Groups    :</tspan> <tspan class="c-green">[CONFIGURED &amp; IN USE - 36 GROUPS]</tspan>
+      </text>
+    </g>
+
+    <!-- Step 4 & 5: Scanning & Progress -->
+    <g class="s4">
+      <text x="0" y="222">
+        <tspan class="c-cyan">[SCAN]</tspan><tspan class="c-white"> Executing multi-vector inspection across selected services...</tspan>
+      </text>
+    </g>
+
+    <g class="s5">
+      <text x="0" y="248">
+        <tspan class="c-blue">Inspection Progress:</tspan>
+      </text>
+      <rect x="170" y="236" width="340" height="14" class="p-bar-bg" />
+      <rect x="170" y="236" width="0" height="14" class="p-bar-fill" />
+      <text x="522" y="248" class="c-green">100.0% Complete</text>
+    </g>
+
+    <!-- Step 6 & 7: Findings Detected -->
+    <g class="s6">
+      <text x="0" y="284">
+        <tspan class="c-yellow">[!] Audit Complete: 3 Misconfigurations Identified</tspan>
+      </text>
+    </g>
+
+    <g class="s7">
+      <text x="0" y="310">
+        <tspan class="c-red">[CRITICAL]</tspan><tspan class="c-white"> SG </tspan><tspan class="c-cyan">sg-04a8b29c</tspan><tspan class="c-white"> allows unrestricted ingress 0.0.0.0/0 on Port 22 (SSH)</tspan>
+      </text>
+      <text x="0" y="332">
+        <tspan class="c-red">[HIGH]    </tspan><tspan class="c-white"> S3 </tspan><tspan class="c-cyan">prod-app-backups</tspan><tspan class="c-white"> missing S3 Public Access Block &amp; KMS Default Encryption</tspan>
+      </text>
+      <text x="0" y="354">
+        <tspan class="c-yellow">[MEDIUM]  </tspan><tspan class="c-white"> IAM user </tspan><tspan class="c-cyan">deploy-agent</tspan><tspan class="c-white"> has access keys unrotated for &gt; 180 days</tspan>
+      </text>
+    </g>
+
+    <!-- Step 8: Interactive Remediation Prompt -->
+    <g class="s8">
+      <text x="0" y="390">
+        <tspan class="c-purple">[REMEDIATE]</tspan><tspan class="c-white"> Launch automated fix for finding </tspan><tspan class="c-cyan">sg-04a8b29c</tspan><tspan class="c-yellow">? (yes/no): </tspan><tspan class="c-green">yes</tspan>
+      </text>
+    </g>
+
+    <!-- Step 9: Remediation applied -->
+    <g class="s9">
+      <text x="0" y="414">
+        <tspan class="c-green">[SUCCESS]</tspan><tspan class="c-white"> Ingress rule 0.0.0.0/0 on port 22 revoked from sg-04a8b29c.</tspan>
+      </text>
+    </g>
+
+    <!-- Step 10: Final Report & Cursor -->
+    <g class="s10">
+      <text x="0" y="438">
+        <tspan class="c-green">[REPORT]</tspan><tspan class="c-white"> Findings exported to </tspan><tspan class="c-cyan">output/comprehensive_scan/20261031_120000/report.txt</tspan>
+      </text>
+      <text x="0" y="464">
+        <tspan class="c-green">sec-ops@cloud-shell</tspan><tspan class="c-dim">:</tspan><tspan class="c-blue">~/aws-scanner</tspan><tspan class="c-white">$ </tspan>
+        <tspan class="cursor">&#9608;</tspan>
+      </text>
+    </g>
+
+  </g>
+</svg>
